@@ -33,4 +33,5 @@ Pipeline for training new models with sct_deepseg_lesion
 
 # 3 running in Rosenberg
 
+nvidia-smi
 CUDA_VISIBLE_DEVICES=0 python 
