@@ -1,12 +1,12 @@
 # deepseg-training
 Pipeline for training new models with sct_deepseg_lesion
 
-# Steps
+# Main Steps
 1) Pre-processing
 2) Retraining
 
 
-# Pre-processing:
+# 1) Pre-processing:
 
 1) If you have ROI from JIM, use the MATLAB script (not generalized yet) to create the mask i.e. ground truth label
 2) Once you have the original input image and its corresponding manually segmented mask, follow the below steps for pre-processing: (Look at Preprocessing_script.ipynb for example code)
@@ -25,7 +25,7 @@ Pipeline for training new models with sct_deepseg_lesion
     e) Standardize the intensities of the cropped image, via Nyul method, as done here:                https://github.com/neuropoly/spinalcordtoolbox/blob/master/scripts/sct_deepseg_lesion.py#L136
 
 
-# Re-trianing:
+# 2) Re-trianing:
 
 1) First, create a pickle data-frame using the script "save_as_pickle.py""
 2) Change the "config_file.py" based on the data directory
