@@ -31,4 +31,6 @@ Pipeline for training new models with sct_deepseg_lesion
 2) Change the "config_file.py" based on the data directory
 3) Run "train_lesion.ipynb" and change the last cell to try different networks.
 
+# 3 running in Rosenberg
 
+CUDA_VISIBLE_DEVICES=0 python 
