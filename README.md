@@ -5,8 +5,9 @@ Here it is assumed to have Input image and its corresponding ground truth masks.
 
 Example of Input image and its mask:
 
-![alt text](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Example_Input_image.png)
+![Input Image](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Example_Input_image.png)
 
+![And its corresponding mask](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Example_Mask_image.png)
 
 
 
