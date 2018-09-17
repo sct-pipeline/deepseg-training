@@ -1,6 +1,7 @@
 # deepseg-training
 Pipeline for training new models with sct_deepseg_lesion
 
+**Files/Data to have**
 Here it is assumed to have Input image and its corresponding ground truth masks. If you have ROI from JIM, it is suggested to convert them to mask either using the MATLAB script or write your own script.
 
 Example of Input image and its mask:
@@ -8,8 +9,6 @@ Example of Input image and its mask:
 **Input Image:**
 
 ![Input Image](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Example_Input_image.png)
-
-
 
 
 
