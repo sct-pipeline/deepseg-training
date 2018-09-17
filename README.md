@@ -1,9 +1,14 @@
 # deepseg-training
 Pipeline for training new models with sct_deepseg_lesion
 
-# Main Steps
-1) Pre-processing
-2) Retraining
+Here it is assumed to have Input image and its corresponding ground truth masks. If you have ROI from JIM, it is suggested to convert them to mask either using the MATLAB script or write your own script.
+
+Example of Input image and its mask:
+
+![alt text](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Example_Input_image.png)
+
+
+
 
 
 # 1) Pre-processing:
