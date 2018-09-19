@@ -20,13 +20,9 @@ Example of Input image and its mask:
 ![And its corresponding mask](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Example_Mask_image.png)
 
 
-Then the data needs to be preprocessed.Overall process can be visualized in the below figure.
-
-![Preprocess01](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Preprocess01.png)
 
 
-
-
+**Then the data needs to be preprocessed.**
 
 
 # 1) Pre-processing:
@@ -58,3 +54,9 @@ Then the data needs to be preprocessed.Overall process can be visualized in the 
 
 nvidia-smi
 CUDA_VISIBLE_DEVICES=0 python 
+
+
+
+**Overall process can be visualized in the below figure.**
+
+![Preprocess01](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Preprocess01.png)
