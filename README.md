@@ -74,50 +74,36 @@ The pre-processed data then needs to be used for retraining.
 2) Change the "config_file.py" based on the data directory
 3) Run "train_lesion.ipynb" and change the last cell to try different networks.
 
-# 3 running in Rosenberg -- Specific to Ecole polytechnique Montreal
-
+**Running in Rosenberg -- NOTE: Specific to Ecole polytechnique Montreal **
 
 Procedure for connecting to GPU cluster, copying and running scripts:
 
 1) ACCESS:
-
 To access GPU cluster, type :
-
-ssh USERNAME@rosenberg.neuro.polymtl.ca in the local terminal
+**ssh USERNAME@rosenberg.neuro.polymtl.ca** in the local terminal
 And its associated password
 
 2) COPYING FILES:
+Once you access the cluster, it is advised to create a folder to copy your scripts, data etc from local computer to GPU cluster server: **mkdir folder_name**
 
-Once you access the cluster, it is advised to create a folder to copy your scripts, data etc from local computer to GPU cluster server: mkdir folder_name
-
-Now to copy files from local computer to GPU station:
-
-First open another local terminal and copy the files using the command
-
-scp path_src USERNAME@rosenberg.neuro.polymtl.ca:PATH_DESTINATION
-example:
+Now to copy files from local computer to GPU station, first open another local terminal and copy the files using the command
+**scp path_src USERNAME@rosenberg.neuro.polymtl.ca:PATH_DESTINATION**
 
 3) RUNNING SCRIPTS and BOOKING GPU SLOT
-
 Once you have the files and scripts that you need in the GPU station, it is time to run them.
 
 At rosenberg terminal:
 a)Before running the script, it is advised to create a virtual environment so that you could install the modules that you need in this virtual environment and does not interfere with other libraries. So, to create virtual environment:
-python2 -m virtualenv env --- here env is the name of virtual environment which can named according to your wish.
-
-Once the virtual environment, it needs to be activated using this command:
-		source env/bin/activate
+**python2 -m virtualenv env** --- here env is the name of virtual environment which can named according to your wish.
+Once the virtual environment, it needs to be activated using this command:**source env/bin/activate**
 b) Now install the modules that you need to run your script inside the virtual environment using pip install…
-c) Check the running GPUs and available GPUs using this command: nvidia-smi
+c) Check the running GPUs and available GPUs using this command: **nvidia-smi**
 d) Then if you want to book specific GPU, then first go to Google calendar (which you need to get access from Alex or Julien) and book the slot.
 e) Then run this command: 
-CUDA_VISIBLE_DEVICES=0 jupyter notebook --no-browser --port=8899
-
+**CUDA_VISIBLE_DEVICES=0 jupyter notebook --no-browser --port=8899**
 For example, in the above command, GPU =0 has been selected. And the port =8899 has been selected. If the port 8899 is not available then it suggests to use another port. The reason for selecting the port will be explained in the next point.
-
 f) At local terminal: type the command: 
-ssh -N -f -L localhost:8899:localhost:8899 USERNAME@rosenberg.neuro.polymtl.ca
+**ssh -N -f -L localhost:8899:localhost:8899 USERNAME@rosenberg.neuro.polymtl.ca**
 Here, look at the port number, it is same as the one selected before.
 The main idea here is, you are opening the tunnel between local computer and the GPU cluster so that your local computer can communicate with the GPU cluster and also can visualize the folders of GPU cluster in your local computer browser.
-
 g) Now open the script and run them.
