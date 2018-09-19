@@ -52,6 +52,11 @@ example: sct_image -set-orient RPI
 Later, in order to have same resolution across different datasets, we choose the 0.5mm isotropic resolution to the input image & its corresponding mask and the centerline mask 
 example: sct_resample -mm 0.5x0.5x0.5   
 
+Example resampled image:
+![resampled001](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Resampled_inputNII01.png)
+
+
+
 Once we have input image and the centerline mask with the istropic resolution of 0.5, as mentioned before we crop the input image and its corresponding mask around the spinal cord centerline.
 
 **Cropped Input image**
