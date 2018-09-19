@@ -129,7 +129,7 @@ g) Now open the script and run them.
 
 
 
-Contributors
+# Contributors
 This project exists thanks to all the people who contributed (https://github.com/sct-pipeline/deepseg-training/pulse).
 
 
