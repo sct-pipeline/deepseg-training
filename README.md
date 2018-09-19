@@ -73,18 +73,27 @@ Once we have input image and the centerline mask with the istropic resolution of
 
 **NOTE:** Sometimes the cropping of resampled image gives out null voxels and this can be resolved by changing the resampling strategy as explained in this issue: (https://github.com/neuropoly/spinalcordtoolbox/issues/2003#issuecomment-418499887)
 
-
 Later we standardize the intensities of the cropped image such that similar intensities will have similar tissue meaning.
 
-The pre-processed data then needs to be used for retraining.
+The pre-processed data needs to organized in as shown below:
+
+Sub001/Cont01/Cont01.nii.gz
+Sub001/Cont02/Cont02.nii.gz
+Sub002/Cont01/Cont01.nii.gz
+Sub002/Cont02/Cont02.nii.gz
+.
+.
+.
+.
+Sub00N/Cont0N/Cont0N.nii.gz
+Sub00N/Cont0N/Cont0N.nii.gz
+
+Then a dictionary or Panda dataframe, saved as pickle file should be created in order to use the following re-training pipeline.
+
+
 
 # Re-trianing:**
 
-
-
-
-
-1) First, create a pickle data-frame using the script "save_as_pickle.py""
 2) Change the "config_file.py" based on the data directory
 3) Run "train_lesion.ipynb" and change the last cell to try different networks.
 
