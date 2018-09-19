@@ -41,7 +41,10 @@ The following bullet points would help to understand. First as it is mentioned b
  (ii) sct_deepseg_sc then sct_process_segmentation -p centerline -- here it uses deep learning algorithm to find the spinal cord and then we get the 
  (iii) sct_propseg then sct_process_segmentation -p centerline
      
-Note that all three would detect the centerline of the spinal cord. If one algorithm fails use the one that suits you.    
+Note that all three would detect the centerline of the spinal cord. If one algorithm fails use the one that suits you. Example centerline image:
+
+![centerline](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Centerline001.png)
+
      
 Since, the orientation of the images could be different for different datasets fom different centres, we need to have data that has same orientation. Therefore, we set the orientation of the input image and centerline mask to RPI 
 example: sct_image -set-orient RPI
