@@ -35,31 +35,18 @@ This is explained in the paper Gros et al, 2018 (https://arxiv.org/pdf/1805.0634
 ![Preprocess01](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Preprocess01.png)
 
 
+The following bullet points would help to understand. First as it is mentioned before, we need to narrow our search area for lesion within spinal cord. So, for that we need to find spinal cord by selecting one of these 3 options:
+ (i) sct_get_centerline 
+ (ii) sct_deepseg_sc then sct_process_segmentation -p centerline -- here it uses deep learning algorithm to find the spinal cord and then we get the 
+ (iii) sct_propseg then sct_process_segmentation -p centerline
+     
+  Note that all three would detect the centerline of the spinal cord. If one algorithm fails use the one that suits you.    
+     
+Since, the orientation of the images could be different for different datasets fom different centres, we need to have data that has same orientation. Therefore, we set the orientation of the input image and centerline mask to RPI 
+example: sct_image -set-orient RPI
 
-
-
-
-
-
-
-
-
-
-
-
-# 1) Pre-processing:
-
-1) If you have ROI from JIM, use the MATLAB script (not generalized yet) to create the mask i.e. ground truth label
-2) Once you have the original input image and its corresponding manually segmented mask, follow the below steps for pre-processing: (Look at Preprocessing_script.ipynb for example code)
-  
-    a) Compute the centerline (i.e. center of the spinal cord, 1 voxel per axial slice): from one of these 3 options 
-      (i) sct_get_centerline 
-      (ii) sct_deepseg_sc then sct_process_segmentation -p centerline 
-      (iii) sct_propseg then sct_process_segmentation -p centerline
-      
-    b)Set RPI orientation to both the input image and the centerline mask via sct_image -set-orient RPI
-    
-    c)Set 0.5mm isotropic resolution to both the input image and the centerline mask via sct_resample -mm 0.5x0.5x0.5 or via          https://github.com/neuropoly/spinalcordtoolbox/blob/master/scripts/sct_deepseg_lesion.py#L520
+Later, in order to have same resolution across different datasets, we choose the 0.5mm isotropic resolution to both the input image and the centerline mask 
+example: sct_resample -mm 0.5x0.5x0.5 or via         
 
     d) Crop the image around the spinal cord centerline. You can use:                     https://github.com/neuropoly/spinalcordtoolbox/blob/master/scripts/sct_deepseg_lesion.py#L165
 
