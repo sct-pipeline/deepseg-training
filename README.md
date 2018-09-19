@@ -1,14 +1,11 @@
 # deepseg-training
 Pipeline for training new models with sct_deepseg_lesion
 
-SCT_DEEPSEG_LESION is deep learning model that segments lesion automatically without human interventions. It has been trained on 
+SCT_DEEPSEG_LESION is deep learning model that segments lesion automatically without human interventions. Please have a look at the paper associated with deepseg_lesion model (https://arxiv.org/pdf/1805.06349.pdf). It has been trained on datasets from Healthy controls (459), Patients with MS or susupected MS (471), Cervical Myelopathy (55), Neuromyelitis optica (19), SCI (4), Amyotrophic lateral sclerosis (32) and syringomyelia (2). This model has been shown to work well with many different datasets.
 
+When we test this model on SCI patients data, the model performs poorly mainly due to variance in the data and also, the initial model was trained with only 4 datasets of SCI patients. Therefore, the model needs to be retrained with the additional datasets when available. This repository explains, how to retrain the model and improve the segmentation process on your dataset, for example from different pathology which the initial model has not seen.
 
-Please note: The main idea of re-training or transfer learning is to improve the already built deep learning models on different datasets. For example, deepseg lesion has been trained on datasets mainly from MS patients and when this model is run on Spinal cord injury (SCI) patients the algorithm performs poorly due to varied unseen datasets. Therefore, here, we could train the model with 
-
-
-**Files/Data to have**
-Here it is assumed to have Input image and its corresponding ground truth masks. If you have ROI from JIM, it is suggested to convert them to mask either using the MATLAB script or write your own script.
+To start with, you need to have data that consists of input image and its corresponding ground truth masks. If you have ROI from JIM, it is suggested to convert them to mask either using the MATLAB script or write your own script.
 
 Example of Input image and its mask:
 
@@ -21,6 +18,13 @@ Example of Input image and its mask:
 **And its corresponding mask:**
 
 ![And its corresponding mask](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Example_Mask_image.png)
+
+
+Then the data needs to be preprocessed.Overall process can be visualized in the below figure.
+
+![Preprocess01](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Preprocess01.png)
+
+
 
 
 
