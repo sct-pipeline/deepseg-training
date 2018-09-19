@@ -68,5 +68,3 @@ The pre-processed data then needs to be used for retraining.
 
 nvidia-smi
 CUDA_VISIBLE_DEVICES=0 python 
-
-
