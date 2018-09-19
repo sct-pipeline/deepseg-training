@@ -23,6 +23,7 @@ Example of Input image and its mask:
 
 
 **Then the data needs to be preprocessed.**
+# Pre-processing:
 
 It is believed that instead of trying to find the lesion in the whole image, narrowing our search area within the spinal cord (SC) will improve the detection of lesion. To do that, in simple words, first we need to detect the spinal cord from input image using SC detection algorithm and crop the input image around SC then using lesion segmentation algorithm segment the lesion.
 
@@ -73,6 +74,10 @@ The pre-processed data then needs to be used for retraining.
 1) First, create a pickle data-frame using the script "save_as_pickle.py""
 2) Change the "config_file.py" based on the data directory
 3) Run "train_lesion.ipynb" and change the last cell to try different networks.
+
+
+
+
 
 # Running in Rosenberg -- NOTE: Specific to Ecole polytechnique Montreal **
 
