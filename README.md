@@ -125,3 +125,13 @@ f) At local terminal: type the command:
 Here, look at the port number, it is same as the one selected before.
 The main idea here is, you are opening the tunnel between local computer and the GPU cluster so that your local computer can communicate with the GPU cluster and also can visualize the folders of GPU cluster in your local computer browser.
 g) Now open the script and run them.
+
+
+
+
+Contributors
+This project exists thanks to all the people who contributed (https://github.com/sct-pipeline/deepseg-training/pulse).
+
+
+
+
