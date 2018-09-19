@@ -41,11 +41,13 @@ The following bullet points would help to understand. First as it is mentioned b
  (ii) sct_deepseg_sc then sct_process_segmentation -p centerline -- here it uses deep learning algorithm to find the spinal cord and then we get the 
  (iii) sct_propseg then sct_process_segmentation -p centerline
      
-Note that all three would detect the centerline of the spinal cord. If one algorithm fails use the one that suits you. Example centerline image:
+Note that all three would detect the centerline of the spinal cord. If one algorithm fails use the one that suits you. 
+
+Example centerline image:
 
 ![centerline](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Centerline001.png)
 
-     
+
 Since, the orientation of the images could be different for different datasets fom different centres, we need to have data that has same orientation. Therefore, we set the orientation of the input image and centerline mask to RPI 
 example: sct_image -set-orient RPI
 
@@ -53,8 +55,8 @@ Later, in order to have same resolution across different datasets, we choose the
 example: sct_resample -mm 0.5x0.5x0.5   
 
 Example resampled image:
-![resampled001](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Resampled_inputNII01.png)
 
+![resampled001](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Resampled_inputNII01.png)
 
 
 Once we have input image and the centerline mask with the istropic resolution of 0.5, as mentioned before we crop the input image and its corresponding mask around the spinal cord centerline.
@@ -67,6 +69,9 @@ Once we have input image and the centerline mask with the istropic resolution of
 **Cropped Mask image**
 
 ![Crop_mask01](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Cropped_Mask01.png)
+
+
+**NOTE:** Sometimes the cropping of resampled image gives out null voxels and this can be resolved by changing the resampling strategy as explained in this issue: (https://github.com/neuropoly/spinalcordtoolbox/issues/2003#issuecomment-418499887)
 
 
 Later we standardize the intensities of the cropped image such that similar intensities will have similar tissue meaning.
