@@ -24,6 +24,28 @@ Example of Input image and its mask:
 
 **Then the data needs to be preprocessed.**
 
+It is believed that instead of trying to find the lesion in the whole image, narrowing our search area within the spinal cord (SC) will improve the detection of lesion. To do that, in simple words, first we need to detect the spinal cord from input image using SC detection algorithm and crop the input image around SC then using lesion segmentation algorithm segment the lesion.
+
+So, we need 1) SC detection model 2) cropping the image around SC 3) Lesion segmentation model.
+
+This is explained in the paper Gros et al, 2018 (https://arxiv.org/pdf/1805.06349.pdf).
+
+**Overall process can be visualized in the below figure.**
+
+![Preprocess01](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Preprocess01.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 1) Pre-processing:
 
@@ -56,7 +78,3 @@ nvidia-smi
 CUDA_VISIBLE_DEVICES=0 python 
 
 
-
-**Overall process can be visualized in the below figure.**
-
-![Preprocess01](https://github.com/sct-pipeline/deepseg-training/blob/master/Figures/Preprocess01.png)
