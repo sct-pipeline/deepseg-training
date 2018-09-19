@@ -64,7 +64,7 @@ Later we standardize the intensities of the cropped image such that similar inte
 
 The pre-processed data then needs to be used for retraining.
 
-**Re-trianing:**
+# Re-trianing:**
 
 
 
@@ -74,7 +74,7 @@ The pre-processed data then needs to be used for retraining.
 2) Change the "config_file.py" based on the data directory
 3) Run "train_lesion.ipynb" and change the last cell to try different networks.
 
-**Running in Rosenberg -- NOTE: Specific to Ecole polytechnique Montreal **
+# Running in Rosenberg -- NOTE: Specific to Ecole polytechnique Montreal **
 
 Procedure for connecting to GPU cluster, copying and running scripts:
 
