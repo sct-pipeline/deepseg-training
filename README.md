@@ -92,11 +92,12 @@ Then a dictionary or Panda dataframe, saved as pickle file should be created in 
 
 
 
-# Re-trianing:**
-
-2) Change the "config_file.py" based on the data directory
-3) Run "train_lesion.ipynb" and change the last cell to try different networks.
-
+# Re-training:**
+There are four important files that are necessary for retaining. They are
+a) Config_file.py: Configuration file consists of the global parameters which need to be changed according to the need.
+b) Generator_file.py: Generator file is used for augmenting the data--like flipping, distorting etc
+c) Utils_file.py: Utilities file consists of functions that is called in the main script like for example: extracting 3D patches
+d) Main_file.ipynb: This is the file that we need to run in order to re-train our network with new data-set. The last cell of this file needs to be changes according to the need and to explore different networks.
 
 
 
