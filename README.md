@@ -45,15 +45,20 @@ The following bullet points would help to understand. First as it is mentioned b
 Since, the orientation of the images could be different for different datasets fom different centres, we need to have data that has same orientation. Therefore, we set the orientation of the input image and centerline mask to RPI 
 example: sct_image -set-orient RPI
 
-Later, in order to have same resolution across different datasets, we choose the 0.5mm isotropic resolution to both the input image and the centerline mask 
-example: sct_resample -mm 0.5x0.5x0.5 or via         
+Later, in order to have same resolution across different datasets, we choose the 0.5mm isotropic resolution to the input image & its corresponding mask and the centerline mask 
+example: sct_resample -mm 0.5x0.5x0.5   
 
-    d) Crop the image around the spinal cord centerline. You can use:                     https://github.com/neuropoly/spinalcordtoolbox/blob/master/scripts/sct_deepseg_lesion.py#L165
+Once we have input image and the centerline mask with the istropic resolution of 0.5, as mentioned before we crop the input image and its corresponding mask around the spinal cord centerline.
 
-    e) Standardize the intensities of the cropped image, via Nyul method, as done here:                https://github.com/neuropoly/spinalcordtoolbox/blob/master/scripts/sct_deepseg_lesion.py#L136
+Later we standardize the intensities of the cropped image such that similar intensities will have similar tissue meaning.
+
+The pre-processed data then needs to be used for retraining.
+
+**Re-trianing:**
 
 
-# 2) Re-trianing:
+
+
 
 1) First, create a pickle data-frame using the script "save_as_pickle.py""
 2) Change the "config_file.py" based on the data directory
