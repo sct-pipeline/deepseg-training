@@ -1,6 +1,12 @@
 # deepseg-training
 Pipeline for training new models with sct_deepseg_lesion
 
+SCT_DEEPSEG_LESION is deep learning model that segments lesion automatically without human interventions. It has been trained on 
+
+
+Please note: The main idea of re-training or transfer learning is to improve the already built deep learning models on different datasets. For example, deepseg lesion has been trained on datasets mainly from MS patients and when this model is run on Spinal cord injury (SCI) patients the algorithm performs poorly due to varied unseen datasets. Therefore, here, we could train the model with 
+
+
 **Files/Data to have**
 Here it is assumed to have Input image and its corresponding ground truth masks. If you have ROI from JIM, it is suggested to convert them to mask either using the MATLAB script or write your own script.
 
